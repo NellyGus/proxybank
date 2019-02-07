@@ -15,4 +15,9 @@ $(function() {
   
 });
 
+// Basic example
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+
 

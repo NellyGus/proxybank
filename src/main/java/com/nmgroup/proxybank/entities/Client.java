@@ -56,6 +56,32 @@ public class Client implements Serializable {
         this.conseiller = conseiller;
         this.date_naiss= date_naiss;
     }
+
+    public Client(Long id, String nom, String prenom, String email, String adresse, Date date_naiss, String tel, Conseiller conseiller, CompteEpargne cmpte_epargne) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.adresse = adresse;
+        this.date_naiss = date_naiss;
+        this.tel = tel;
+        this.conseiller = conseiller;
+        this.cmpte_epargne = cmpte_epargne;
+    }
+
+    public Client(Long id, String nom, String prenom, String email, String adresse, Date date_naiss, String tel, Conseiller conseiller, CompteCourant cmpte_courant) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.adresse = adresse;
+        this.date_naiss = date_naiss;
+        this.tel = tel;
+        this.conseiller = conseiller;
+        this.cmpte_courant = cmpte_courant;
+    }
+    
+    
     
     @ManyToOne
     private Conseiller conseiller;
