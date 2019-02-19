@@ -20,36 +20,36 @@ import javax.ejb.Stateless;
 public class ClientService implements IClientService {
 
     @EJB
-    ClientDao daoGeneric;
+    IClientDao clientDao;
     
     @Override
     public void ajouter(Client entity) {
         if(entity!=null){
-            daoGeneric.addEntity(entity);
+            clientDao.addEntity(entity);
         }
     }
 
     @Override
     public Client modifier(Client entity) {
         if(entity!= null){
-            entity= daoGeneric.editEntity(entity);
+            entity= clientDao.editEntity(entity);
         }
         return entity;
     }
 
     @Override
     public void suppr(Client entity) {
-        daoGeneric.deleteEntity(entity);
+        clientDao.deleteEntity(entity);
     }
 
     @Override
     public Client rech(Long entityID) {
-        return daoGeneric.searchEntity(entityID);
+        return clientDao.searchClient(entityID);
     }
 
     @Override
     public List<Client> affichTout() {  
-        return daoGeneric.findAll();
+        return clientDao.findAll();
     }
 
     

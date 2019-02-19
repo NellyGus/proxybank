@@ -7,6 +7,7 @@ package com.nmgroup.proxybank.dao;
 
 import com.nmgroup.proxybank.entities.Client;
 import java.io.Serializable;
+import java.util.List;
 import javax.ejb.Stateless;
 import lombok.NoArgsConstructor;
 /**
@@ -17,4 +18,15 @@ import lombok.NoArgsConstructor;
 @Stateless
 public class ClientDao extends Dao<Client, Long> implements IClientDao {
 
+    @Override
+    public Client searchClient(Long clientID) {
+        return em.find(Client.class, clientID);
+    }
+
+    @Override
+    public List<Client> findAll() {
+        return em.createQuery("SELECT client FROM "+ Client.class.getSimpleName()+" client").getResultList();
+    }
+
+    
 }

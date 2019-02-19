@@ -47,13 +47,12 @@ public class Client implements Serializable {
     private Date date_naiss;
     private String tel;
 
-    public Client(String nom, String prenom, String email, String adresse, String tel, Conseiller conseiller, Date date_naiss) {
+    public Client(String nom, String prenom, String email, String adresse, String tel, Date date_naiss) {
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
         this.adresse = adresse;
         this.tel = tel;
-        this.conseiller = conseiller;
         this.date_naiss= date_naiss;
     }
 

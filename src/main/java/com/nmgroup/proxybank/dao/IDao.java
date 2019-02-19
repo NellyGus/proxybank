@@ -5,20 +5,17 @@
  */
 package com.nmgroup.proxybank.dao;
 
-import com.nmgroup.proxybank.entities.Client;
 import java.io.Serializable;
-import java.util.List;
-import javax.ejb.Local;
 
 /**
  *
  * @author Admin
  */
-@Local
-public interface IClientDao extends IDao<Client, Long>{
-
-    Client searchClient(Long clientID);
-
-    List<Client> findAll();
-
+public interface IDao<T, ID extends Serializable> {
+    
+    public void addEntity(T entity);
+    
+    public T editEntity(T entity);
+    
+    public void deleteEntity(T entity);
 }

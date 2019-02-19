@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 public abstract class Dao<T,ID extends Serializable>  {
     
     @PersistenceContext(unitName = "proxybankPU")
-    EntityManager em;
+    protected EntityManager em;
     private final Class<T> entityClass;
 
     public Dao() {
@@ -44,11 +44,4 @@ public abstract class Dao<T,ID extends Serializable>  {
         em.remove(entity2BeRemoved);
     }
     
-    public T searchEntity(ID entityID){
-        return em.find(entityClass, entityID) ;
-    }
-    
-    public List<T> findAll(){
-        return em.createQuery("SELECT entity from "+ entityClass.getSimpleName() +" entity").getResultList();
-    }
 }
